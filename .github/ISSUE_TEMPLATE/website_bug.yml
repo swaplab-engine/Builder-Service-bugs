@@ -1,0 +1,34 @@
+name: Website UI/UX Bug
+description: Report a bug related to the website interface (e.g., broken buttons, UI glitches).
+title: "[WEB BUG]: <Short description>"
+labels: ["bug", "website"]
+body:
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      description: Which service are you using?
+      options:
+        - private.swaplab.net
+        - public.swaplab.net
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Issue Details
+      description: Describe the bug in detail. What did you expect to happen, and what actually happened? (e.g., UI is misaligned, button is not working)
+      placeholder: The 'Upload and Build' button is unresponsive when clicking...
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Please provide step-by-step instructions to reproduce the issue.
+      placeholder: |
+        1. Go to...
+        2. Click on...
+        3. See error...
+    validations:
+      required: true

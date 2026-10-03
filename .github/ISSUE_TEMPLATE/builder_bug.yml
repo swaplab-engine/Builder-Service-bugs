@@ -1,0 +1,72 @@
+name: Package Image Builder Bug
+description: Report a build failure or engine issue during the compilation process.
+title: "[BUILD BUG]: <Short description>"
+labels: ["bug", "build-engine"]
+body:
+  - type: dropdown
+    id: target_platform
+    attributes:
+      label: Target Platform
+      options:
+        - Android
+        - iOS
+    validations:
+      required: true
+  - type: dropdown
+    id: project_framework
+    attributes:
+      label: Project Framework Type
+      options:
+        - Capacitor
+        - Cordova
+    validations:
+      required: true
+  - type: dropdown
+    id: image_name
+    attributes:
+      label: Image Name (Hybrid Mobile App Stack)
+      options:
+        - /swaplab-engine/capacitor-build-android-engine
+        - /swaplab-engine/cordova-build-android-engine
+        - /swaplab-engine/capacitor-build-ios-engine
+        - /swaplab-engine/cordova-build-ios-engine
+        - Other (Specify in details)
+    validations:
+      required: true
+  - type: input
+    id: image_tag
+    attributes:
+      label: Reference (Image Tag)
+      placeholder: e.g., v3.0.0-beta.1, v2.1.0, v2.0.0, v1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: build_type
+    attributes:
+      label: Build Type
+      options:
+        - Debug APK
+        - Release APK
+        - Release AAB
+        - Export Android Studio
+        - Export Xcode (iOS)
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Issue Details / Terminal Log Snippet
+      description: Describe the build failure. Please include relevant error messages from the terminal.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this build failure?
+      placeholder: |
+        1. Select Capacitor
+        2. Set Android API Level 36
+        3. Click Build...
+    validations:
+      required: true
